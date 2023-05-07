@@ -1,7 +1,7 @@
 import http from "k6/http";
 
-export const option = {
-  vus: 100, // 100명
+export const options = {
+  vus: 1800, // 1800명
   duration: "10s", // 10초 동안 요청
 };
 
