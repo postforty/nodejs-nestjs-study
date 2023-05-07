@@ -15,6 +15,8 @@ http
   })
   .listen("3000", () => console.log("라우터를 만들어 보자!"));
 
+// createServer() 리펙터링
+// 라우팅 이후의 처리를 별도의 함수를 만들어서 처리
 const user = (req, res) => {
   res.end("[user] name : andy, age: 30");
 };
