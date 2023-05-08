@@ -9,3 +9,6 @@
   + 자바스크립트로 부하 테스트 시나리오를 만들 수 있음
   + 설치: https://dl.k6.io/msi/
   + 실행: k6 run test_hello.js
+
+## express
++ npm i express
