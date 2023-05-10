@@ -12,3 +12,9 @@
 
 ## express
 + npm i express
+
+## npm
++ npm ls -g : 글로벌 설치 모듈 조회
++ yarn2
+  + corepack enable : cmd 관리자 모드에서 실행
+  + yarn init -2
