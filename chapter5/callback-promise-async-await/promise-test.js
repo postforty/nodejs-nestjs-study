@@ -1,7 +1,7 @@
 const DB = [];
 
 function saveDB(user) {
-  const oldDBSize = DB.length;
+  const oldDBSize = DB.length + 1;
   DB.push(user);
   console.log(`save ${user.name} to DB`);
   return new Promise((resolve, reject) => {
@@ -27,7 +27,11 @@ function getResult(user) {
 }
 
 function registerByPromise(user) {
-  const result = saveDB(user).then(sendEmail).then(getResult);
+  const result = saveDB(user)
+    .then(sendEmail)
+    .then(getResult)
+    .catch((error) => new Error(error))
+    .finally(() => console.log("완료!"));
   //   result.then(console.log);
   console.log(result);
   return result;
@@ -39,5 +43,7 @@ const myUser = {
   name: "andy",
 };
 const result = registerByPromise(myUser);
-// console.log(result);
 result.then(console.log);
+
+// allResult = Promise.all([saveDB(myUser), sendEmail(myUser), getResult(myUser)]);
+// allResult.then(console.log);
