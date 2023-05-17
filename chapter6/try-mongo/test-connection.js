@@ -2,27 +2,17 @@ const { MongoClient, ServerApiVersion } = require("mongodb");
 const uri =
   "mongodb+srv://postforty:jhm687912JHM@cluster0.k7h9fij.mongodb.net/?retryWrites=true&w=majority";
 
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
-});
+// 데이터베이스 정보를 출력하도록 소스 코드 변경
+const client = new MongoClient(uri);
 
 async function run() {
-  try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log(
-      "Pinged your deployment. You successfully connected to MongoDB!"
-    );
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
+  await client.connect();
+  const adminDB = client.db("test").admin();
+  const listDatabases = await adminDB.listDatabases(); // admin, local은 기본적으로 생성되어 있는 데이터베이스
+  console.log(listDatabases);
+  return "OK";
 }
-run().catch(console.dir);
+run()
+  .then(console.log)
+  .catch(console.error)
+  .finally(() => client.close());
