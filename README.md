@@ -18,3 +18,6 @@
 + yarn2
   + corepack enable : cmd 관리자 모드에서 실행
   + yarn init -2
+
+## NoSQL MongoDB
++ npm i mongodb
