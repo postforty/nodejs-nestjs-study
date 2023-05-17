@@ -20,4 +20,7 @@
   + yarn init -2
 
 ## NoSQL MongoDB
-+ npm i mongodb
++ 설치
+  + npm i mongodb
++ Mongoose
+  + npm i mongoose
