@@ -24,5 +24,10 @@
   + npm i mongodb
 + Mongoose
   + npm i mongoose
++ GUI 도구
+  + MongoDB Compass
 + API 테스트
   + REST Client(VSCode Extension)
++ Issue
+  + collection은 "person"인데 왜 "people"가 만들어질까?
+  + put시 동일한 데이터가 여러개 있을때 첫번째만 수정됨
