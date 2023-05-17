@@ -4,3 +4,4 @@ chapter3/express-server/package-lock.json
 chapter4/test-npx/node_modules/*
 chapter4/test-yarn/
 chapter5/callback-promise-async-await/node_modules/*
+chapter6/try-mongo/node_modules/*
