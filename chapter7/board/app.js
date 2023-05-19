@@ -18,5 +18,10 @@ app.get("/write", (req, res) => {
     title: "테스트 게시판",
   });
 });
+app.get("/detail/:id", (req, res) => {
+  res.render("detail", {
+    title: "테스트 게시판",
+  });
+});
 
 app.listen(3000);
