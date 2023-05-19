@@ -6,3 +6,4 @@ chapter4/test-yarn/
 chapter5/callback-promise-async-await/node_modules/*
 chapter6/try-mongo/node_modules/*
 chapter6/test-mongoose/node_modules/*
+chapter7/board/node_modules/*
