@@ -31,3 +31,10 @@
 + Issue
   + collection은 "person"인데 왜 "people"가 만들어질까?
   + put시 동일한 데이터가 여러개 있을때 첫번째만 수정됨
+
+## 게시판(Express, MongoDB)
++ 초기 설정
+  + npm init -y
+  + npm i express@4.17.3
+  + npm i mongodb@4.13.0
+  + npm i express-handlebars@6.0.3 (템플릿 엔진)
