@@ -20,12 +20,19 @@ app.engine(
 app.set("view engine", "handlebars");
 app.set("views", __dirname + "/views"); // __dirname는 node를 실행하는 디렉토리 경로
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
   // home은 템플릿 파일 이름
-  res.render("home", {
-    title: "테스트 게시판",
-    message: "express, mongodb, handlebars!",
-  });
+  const page = parseInt(req.query.page) || 1;
+  const search = req.query.search || "";
+  try {
+    const [posts, paginator] = await postService.list(collection, page, search);
+    res.render("home", { title: "테스트 게시판", search, paginator, posts });
+  } catch (error) {
+    console.log(error);
+    res.render("home", {
+      title: "테스트 게시판",
+    });
+  }
 });
 app.get("/write", (req, res) => {
   res.render("write", {
