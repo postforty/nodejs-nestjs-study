@@ -1,22 +1,21 @@
 const express = require("express");
 const handlebars = require("express-handlebars");
 const app = express();
-const postService = require("./services/post-service");
 
 // req.body와 POST 요청을 해석하기 위한 설정
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+const postService = require("./services/post-service");
 
 // 몽고디비 연결 함수
 const mongodbConnection = require("./configs/mongodb-connection");
 
 app.engine(
   "handlebars",
-  handlebars
-    .create({
-      helpers: require("./configs/handlebars-helpers"),
-    })
-    .engine()
+  handlebars.create({
+    helpers: require("./configs/handlebars-helpers"),
+  }).engine
 );
 app.set("view engine", "handlebars");
 app.set("views", __dirname + "/views"); // __dirname는 node를 실행하는 디렉토리 경로
