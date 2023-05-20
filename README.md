@@ -39,3 +39,4 @@
   + npm i mongodb@4.13.0
   + npm i express-handlebars@6.0.3 (템플릿 엔진)
   + npm i nodemon@2.0.20
+  + npm i lodash
