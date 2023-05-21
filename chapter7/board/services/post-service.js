@@ -1,3 +1,5 @@
+const paginator = require("../utils/paginator");
+
 async function writePost(collection, post) {
   post.hits = 0;
   post.createdDt = new Date().toISOString(); // 날짜는 ISO 포맷으로 저장
