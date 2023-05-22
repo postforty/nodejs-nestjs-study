@@ -23,7 +23,7 @@ async function list(collection, page, search) {
 const projectionOption = {
   projection: {
     // 프로젝션(투영) 결괏값에서 일부만 가져올 때 사용
-    password: 0,
+    password: 0, // 패스워드 만 빼고 가져옴, 패스워드 만 가져오고 싶을때는 password: 1
     "comments.password": 0,
   },
 };
@@ -31,7 +31,7 @@ const projectionOption = {
 async function getDetailPost(collection, id) {
   return await collection.findOneAndUpdate(
     { _id: ObjectId(id) },
-    { $inc: { hits: 1 } }, // 게시글을 읽을 때마다 hits 1 증가
+    { $inc: { hits: 1 } }, // 게시글을 읽을 때마다 hits 1 증가, $inc는 increase
     projectionOption
   );
 }
