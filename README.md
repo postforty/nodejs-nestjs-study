@@ -40,3 +40,6 @@
   + npm i express-handlebars@6.0.3 (템플릿 엔진)
   + npm i nodemon@2.0.20
   + npm i lodash
++ Issue
+  + handlebars 파일 저장시 <script></script> 태그 안 JS 코드 뭉침 현상 발생
+    + .prettierignore 파일 작성하여 해결(VSCode에서 연 루트 폴더에 해당 파일이 있어야 함)  
