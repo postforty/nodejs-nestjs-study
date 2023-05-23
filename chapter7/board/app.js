@@ -54,7 +54,19 @@ app.get("modify/:id", async (req, res) => {
   res.render("writer", { title: "테스트 게시판 ", mode: "modify", post });
 });
 // 게시글 수정 API
-app.post("/modify", async (req, res) => {});
+app.post("/modify", async (req, res) => {
+  const { id, title, writer, password, content } = req.body;
+
+  const post = {
+    title,
+    writer,
+    password,
+    content,
+    createdDt: new Date().toISOString(),
+  };
+  const result = postService.updatePost(collection, id, post);
+  res.redirect(`/detail/${id}`);
+});
 app.get("/detail/:id", async (req, res) => {
   const result = await postService.getDetailPost(collection, req.params.id);
   res.render("detail", {
