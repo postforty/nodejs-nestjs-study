@@ -41,16 +41,41 @@ app.get("/write", (req, res) => {
 });
 // 글쓰기
 app.post("/write", async (req, res) => {
-  const post = req.body;
-  const result = await postService.writePost(collection, post);
-  res.redirect(`/detail/${result.insertedId}`);
+  res.render("write", { title: "테스트 게시판", mode: "create" });
+  // const post = req.body;
+  // const result = await postService.writePost(collection, post);
+  // res.redirect(`/detail/${result.insertedId}`);
 });
+// 수정 페이지로 이동
+app.get("modify/:id", async (req, res) => {
+  const { id } = req.params.id;
+  const post = await postService.getPostById(collection, req.params.id);
+  console.log(post);
+  res.render("writer", { title: "테스트 게시판 ", mode: "modify", post });
+});
+// 게시글 수정 API
+app.post("/modify", async (req, res) => {});
 app.get("/detail/:id", async (req, res) => {
   const result = await postService.getDetailPost(collection, req.params.id);
   res.render("detail", {
     title: "테스트 게시판",
     post: result.value,
   });
+});
+// 패스워드 체크
+app.post("/check-password", async (req, res) => {
+  const { id, password } = req.body;
+
+  const post = await postService.getPostByIdPassword(collection, {
+    id,
+    password,
+  });
+
+  if (!post) {
+    return res.status(404).json({ isExist: false });
+  } else {
+    return res.json({ isExist: true });
+  }
 });
 
 let collection;
