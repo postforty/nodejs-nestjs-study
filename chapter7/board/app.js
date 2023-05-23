@@ -56,11 +56,11 @@ app.get("/write", (req, res) => {
   });
 });
 // 수정 페이지로 이동
-app.get("modify/:id", async (req, res) => {
+app.get("/modify/:id", async (req, res) => {
   const { id } = req.params.id;
   const post = await postService.getPostById(collection, req.params.id);
   console.log(post);
-  res.render("writer", { title: "테스트 게시판 ", mode: "modify", post });
+  res.render("write", { title: "테스트 게시판 ", mode: "modify", post });
 });
 // 게시글 수정 API
 app.post("/modify", async (req, res) => {
