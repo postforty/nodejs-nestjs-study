@@ -76,6 +76,25 @@ app.post("/write-comment", async (req, res) => {
   postService.updatePost(collection, id, post);
   return res.redirect(`/detail/${id}`);
 });
+// 댓글 삭제
+app.delete("/delete-comment", async (req, res) => {
+  const { id, idx, password } = req.body;
+  const post = await collection.findOne(
+    {
+      _id: ObjectId(id),
+      comments: { $elemMatch: { idx: parseInt(idx), password } },
+    },
+    postService.projectionOption
+  );
+
+  if (!post) {
+    return res.json({ isSuccess: false });
+  }
+
+  post.comments = post.comments.filter((comment) => comment.idx != idx);
+  postService.updatePost(collection, id, post);
+  return res.json({ isSuccess: true });
+});
 // 쓰기 페이지 이동
 app.get("/write", (req, res) => {
   res.render("write", {
