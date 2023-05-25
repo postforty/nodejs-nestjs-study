@@ -49,6 +49,33 @@ app.post("/write", async (req, res) => {
   const result = await postService.writePost(collection, post);
   res.redirect(`/detail/${result.insertedId}`);
 });
+// 댓글 추가
+app.post("/write-comment", async (req, res) => {
+  const { id, name, password, comment } = req.body;
+  const post = await postService.getPostById(collection, id);
+
+  if (post.comments) {
+    post.comments.push({
+      idx: post.comments.length + 1,
+      name,
+      password,
+      comment,
+      createdDt: new Date().toISOString(),
+    });
+  } else {
+    post.comments = [
+      {
+        idx: 1,
+        name,
+        password,
+        comment,
+        createdDt: new Date().toISOString(),
+      },
+    ];
+  }
+  postService.updatePost(collection, id, post);
+  return res.redirect(`/detail/${id}`);
+});
 // 쓰기 페이지 이동
 app.get("/write", (req, res) => {
   res.render("write", {
