@@ -47,3 +47,5 @@
 ## NestJS
 + 의존성 패키지 설치
   + npm i @nestjs/core @nestjs/common @nestjs/platform-express reflect-metadata typescript
++ 실행
+  + npx ts-node-dev src/main.ts 
