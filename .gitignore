@@ -8,39 +8,5 @@ chapter6/try-mongo/node_modules/*
 chapter6/test-mongoose/node_modules/*
 chapter7/board/node_modules/*
 chapter8/hello-nestjs/node_modules/*
-
-# compiled output
 chapter8/blog/dist/*
 chapter8/blog/node_modules/*
-
-# Logs
-logs
-*.log
-npm-debug.log*
-pnpm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-
-# OS
-.DS_Store
-
-# Tests
-/coverage
-/.nyc_output
-
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
