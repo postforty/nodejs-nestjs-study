@@ -8,5 +8,4 @@ chapter6/try-mongo/node_modules/*
 chapter6/test-mongoose/node_modules/*
 chapter7/board/node_modules/*
 chapter8/hello-nestjs/node_modules/*
-chapter8/blog/dist/*
 chapter8/blog/node_modules/*
