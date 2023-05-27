@@ -48,4 +48,8 @@
 + 의존성 패키지 설치
   + npm i @nestjs/core @nestjs/common @nestjs/platform-express reflect-metadata typescript
 + 실행
-  + npx ts-node-dev src/main.ts 
+  + npx ts-node-dev src/main.ts
++ nest-cli 설치
+  + npm i -g @nestjs/cli
+  + nest new blog
+    + npm 선택
