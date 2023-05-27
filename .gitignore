@@ -10,8 +10,8 @@ chapter7/board/node_modules/*
 chapter8/hello-nestjs/node_modules/*
 
 # compiled output
-chapter8/blog/dist
-chapter8/blog/node_modules
+chapter8/blog/dist/*
+chapter8/blog/node_modules/*
 
 # Logs
 logs
