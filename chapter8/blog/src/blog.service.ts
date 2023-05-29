@@ -1,14 +1,11 @@
+import { Injectable } from '@nestjs/common';
 import { PostDto } from './blog.model';
 
-import { BlogFileRepository, BlogRepository } from './blog.repository';
+import { BlogFileRepository } from './blog.repository';
 
+@Injectable()
 export class BlogService {
-  // posts = [];
-  blogRepository: BlogRepository;
-
-  constructor() {
-    this.blogRepository = new BlogFileRepository();
-  }
+  constructor(private blogRepository: BlogFileRepository) {}
 
   async getAllPosts() {
     console.log('GET요청');

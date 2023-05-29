@@ -11,22 +11,19 @@ import { BlogService } from './blog.service';
 
 @Controller('blog')
 export class BlogController {
-  BlogService: BlogService;
-  constructor() {
-    this.BlogService = new BlogService();
-  }
+  constructor(private blogService: BlogService) {}
 
   @Get()
   getAllPosts() {
     console.log('모든 게시글 가져오기');
-    return this.BlogService.getAllPosts();
+    return this.blogService.getAllPosts();
   }
 
   @Post()
   createPost(@Body() postDto) {
     console.log('게시글 작성');
     console.log(postDto);
-    this.BlogService.createPost(postDto);
+    this.blogService.createPost(postDto);
     return 'success';
   }
 
@@ -34,7 +31,7 @@ export class BlogController {
   async getPost(@Param('id') id: string) {
     console.log(`[id: ${id}]게시글 하나 가져오기`);
 
-    const post = await this.BlogService.getPost(id);
+    const post = await this.blogService.getPost(id);
     console.log(post);
     return post;
   }
@@ -42,13 +39,13 @@ export class BlogController {
   @Delete('/:id')
   deletePost(@Param('id') id: string) {
     console.log('게시글 삭제');
-    this.BlogService.delete(id);
+    this.blogService.delete(id);
     return 'success';
   }
 
   @Put('/:id')
   updatePost(@Param('id') id: string, @Body() postDto) {
     console.log('게시글 업데이트', id, postDto);
-    return this.BlogService.updatePost(id, postDto);
+    return this.blogService.updatePost(id, postDto);
   }
 }
