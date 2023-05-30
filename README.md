@@ -53,3 +53,5 @@
   + npm i -g @nestjs/cli
   + nest new blog
     + npm 선택
++ 몽고디비 연동
+  + npm i @nestjs/mongoose mongoose
