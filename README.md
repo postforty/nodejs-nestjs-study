@@ -55,3 +55,5 @@
     + npm 선택
 + 몽고디비 연동
   + npm i @nestjs/mongoose mongoose
++ 의존성 패키지 설치(dotenv)
+  + npm i @nestjs/config
