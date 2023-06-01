@@ -57,3 +57,6 @@
   + npm i @nestjs/mongoose mongoose
 + 의존성 패키지 설치(dotenv)
   + npm i @nestjs/config
++ weather 모듈
+  + nest g module weather
+  + nest g controller weather --no-spec
