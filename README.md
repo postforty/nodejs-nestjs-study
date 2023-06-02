@@ -60,3 +60,7 @@
 + weather 모듈
   + nest g module weather
   + nest g controller weather --no-spec
++ .env 관련 Issue
+  + @module 데코레이터의 매개변수에 경로를 인수로 넣을때 책에 있는 코드와 같이 envFilePath: `${process.cwd()}/envs/${process.env.NODE_ENV}.env`로 하면 .env 앞에 공백이 추가되어 제대로 경로를 찾지 못하는 문제 발생함
+  + .trim()으로 공백을 제거해야 함
+  ``` envFilePath: `${process.cwd()}/envs/${process.env.NODE_ENV.trim()}.env````
