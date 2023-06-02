@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { WeatherModule } from './weather/weather.module';
+import config from './configs/config';
 
 console.log('env : ' + process.env.NODE_ENV);
 console.log('current working directory : ' + process.cwd());
@@ -13,6 +14,7 @@ console.log(`${process.cwd()}/envs/${process.env.NODE_ENV.trim()}.env`);
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: `${process.cwd()}/envs/${process.env.NODE_ENV.trim()}.env`,
+      load: [config],
     }),
     WeatherModule,
   ],
