@@ -69,3 +69,6 @@
   ```
   envFilePath: `${process.cwd()}/envs/${process.env.NODE_ENV.trim()}.env`
   ```
++ YAML 사용 환경 변수 설정
+  + npm i js-yaml
+  + npm i -D @types/js-yaml
