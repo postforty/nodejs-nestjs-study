@@ -15,6 +15,7 @@ console.log(`${process.cwd()}/envs/${process.env.NODE_ENV.trim()}.env`);
       isGlobal: true,
       envFilePath: `${process.cwd()}/envs/${process.env.NODE_ENV.trim()}.env`,
       load: [config],
+      cache: true, // ConfigService의 get() 함수 사용시 캐시에서 먼저 불러오므로 성능상 이점
     }),
     WeatherModule,
   ],
