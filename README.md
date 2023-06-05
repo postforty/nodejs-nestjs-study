@@ -81,3 +81,5 @@
   + nest g module user
   + nest g controller user --no-spec
   + nest g service user --no-spec
++ SQlite 데이터 베이스
+  + npm i sqlite3 typeorm @nestjs/typeorm
