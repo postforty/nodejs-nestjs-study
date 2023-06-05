@@ -45,6 +45,7 @@
     + .prettierignore 파일 작성하여 해결(VSCode에서 폴더 열기한 폴더의 루트에 해당 파일이 있어야 함)  
 
 ## NestJS
+### NestJS 시작
 + 의존성 패키지 설치
   + npm i @nestjs/core @nestjs/common @nestjs/platform-express reflect-metadata typescript
 + 실행
@@ -55,6 +56,7 @@
     + npm 선택
 + 몽고디비 연동
   + npm i @nestjs/mongoose mongoose
+### 환경 변수 설정
 + 의존성 패키지 설치(dotenv)
   + npm i @nestjs/config
 + weather 모듈
@@ -72,3 +74,12 @@
 + YAML 사용 환경 변수 설정
   + npm i js-yaml
   + npm i -D @types/js-yaml
+### 회원 가입, 인증
++ nest-cli 프로젝트 생성
+  + nest new nest-auth-test
++ User 모듈 생성
+  + nest g module user
+  + nest g controller user --no-spec
+  + nest g service user --no-spec
++ SQlite 데이터 베이스
+  + npm i sqlite3 typeorm @nestjs/typeorm
