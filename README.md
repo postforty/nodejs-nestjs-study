@@ -83,5 +83,13 @@
   + nest g service user --no-spec
 + SQlite 데이터 베이스
   + npm i sqlite3 typeorm @nestjs/typeorm
+  + SQLite extension 설치
 + ValidationPipe 유효성 검증
-  + npm i class-validator class-transformer 
+  + npm i class-validator class-transformer
++ auth 모듈 생성
+  + nest g module auth
+  + nest g service auth --no-spec
+  + nest g controller auth --no-spec
++ 암호화
+  + npm i bcrypt
+  + npm i -D @types/bcrypt
