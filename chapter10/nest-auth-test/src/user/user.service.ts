@@ -6,6 +6,6 @@ import { Repository } from 'typeorm'; // 리포지토리
 @Injectable()
 export class UserService {
   constructor(
-    @InjectRepository(User) private userRepository: Repository<User>, // <>안에 entity 객체 추가
+    @InjectRepository(User) private userRepository: Repository<User>, // <>안에 entity 객체 타입 추가
   ) {}
 }
