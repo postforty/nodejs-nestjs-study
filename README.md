@@ -89,3 +89,6 @@
   + nest g module auth
   + nest g service auth --no-spec
   + nest g controller auth --no-spec
++ 암호화
+  + npm i bcrypt
+  + npm i -D @types/bcrypt
