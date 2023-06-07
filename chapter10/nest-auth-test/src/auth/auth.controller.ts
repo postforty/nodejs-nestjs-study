@@ -1,6 +1,15 @@
 import { CreateUserDto } from 'src/user/user.dto';
 import { AuthService } from './auth.service';
-import { Body, Controller, Post, Request, Response } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  Request,
+  Response,
+  UseGuards,
+} from '@nestjs/common';
+import { LoginGuard } from './auth.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -25,5 +34,23 @@ export class AuthController {
       });
     }
     return res.send({ message: 'login success' });
+  }
+
+  @UseGuards(LoginGuard)
+  @Post('login2')
+  async login2(@Request() req, @Response() res) {
+    if (!req.cookies['login'] && req.user) {
+      res.cookie('login', JSON.stringify(req.user), {
+        httpOnly: true,
+        maxAge: 1000 * 10, // 로그인 테스트를 고려해 10초로 설정
+      });
+    }
+    return res.send({ message: 'login2 success' });
+  }
+
+  @UseGuards(LoginGuard)
+  @Get('test-guard')
+  testGuard() {
+    return '로그인된 때만 이 글이 보입니다.';
   }
 }
