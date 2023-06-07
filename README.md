@@ -93,3 +93,6 @@
 + 암호화
   + npm i bcrypt
   + npm i -D @types/bcrypt
++ guard: 인증 검사
+  + npm i cookie-parser
+  + 
