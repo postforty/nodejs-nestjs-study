@@ -95,4 +95,6 @@
   + npm i -D @types/bcrypt
 + guard: 인증 검사
   + npm i cookie-parser
-  + 
++ passport, session 인증
+  + npm i @nestjs/passport passport passport-local express-session
+  + npm i -D @types/passport-local @types/express-session
