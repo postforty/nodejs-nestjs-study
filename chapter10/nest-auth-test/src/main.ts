@@ -14,7 +14,7 @@ async function bootstrap() {
       secret: 'very-important-secret', // 세션 암호화에 사용되는 키(유출되면 안됨)
       resave: false,
       saveUninitialized: false,
-      cookie: { maxAge: 3600000 },
+      cookie: { maxAge: 3600000 }, // 쿠키 유효기간 1시간
     }),
   ),
     app.use(passport.initialize());
