@@ -9,7 +9,7 @@ import {
   Response,
   UseGuards,
 } from '@nestjs/common';
-import { LoginGuard } from './auth.guard';
+import { AuthenticatedGuard, LocalAuthGuard, LoginGuard } from './auth.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -52,5 +52,17 @@ export class AuthController {
   @Get('test-guard')
   testGuard() {
     return '로그인된 때만 이 글이 보입니다.';
+  }
+
+  @UseGuards(LocalAuthGuard)
+  @Post('login3')
+  async login3(@Request() req) {
+    return req.user;
+  }
+
+  @UseGuards(AuthenticatedGuard)
+  @Get('test-guard2')
+  testGuardWithSession(@Request() req) {
+    return req.user;
   }
 }
