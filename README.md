@@ -98,3 +98,6 @@
 + passport, session 인증
   + npm i @nestjs/passport passport passport-local express-session
   + npm i -D @types/passport-local @types/express-session
+### OAuth
++ 환경 설정 파일 추가
+  + npm i @nestjs/config
