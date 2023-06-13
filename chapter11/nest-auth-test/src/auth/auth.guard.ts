@@ -49,3 +49,12 @@ export class AuthenticatedGuard implements CanActivate {
     return request.isAuthenticated();
   }
 }
+
+@Injectable()
+export class GoogleAuthGuard extends AuthGuard('google') {
+  async canActivate(context: any): Promise<boolean> {
+    const result = (await super.canActivate(context)) as boolean;
+    const request = context.switchToHttp().getRequest();
+    return result;
+  }
+}
