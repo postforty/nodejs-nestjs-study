@@ -101,3 +101,6 @@
 ### OAuth
 + 환경 설정 파일 추가
   + npm i @nestjs/config
++ 구글 OAuth 스트래티지
+  + npm i passport-google-oauth20
+  + npm i -D @types/passport-google-oauth20
