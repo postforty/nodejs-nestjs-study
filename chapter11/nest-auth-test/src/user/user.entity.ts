@@ -9,12 +9,15 @@ export class User {
   @Column({ unique: true })
   email: string;
 
-  @Column()
+  @Column({ nullable: true })
   password: string;
 
   @Column()
   username: string;
 
-  @Column({ default: true })
-  createdDt: Date = new Date();
+  @Column({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })
+  createdDt: Date;
+
+  @Column({ nullable: true })
+  providerId: string;
 }
