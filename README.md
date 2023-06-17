@@ -104,3 +104,9 @@
 + 구글 OAuth 스트래티지
   + npm i passport-google-oauth20
   + npm i -D @types/passport-google-oauth20
+### 파일 업로드
++ nest-cli 프로젝트 생성
+  + nest new nest-file-upload
++ 의존성 패키지
+  + npm i -D @types/multer
+  + 
