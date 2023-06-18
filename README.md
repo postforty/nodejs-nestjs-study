@@ -109,4 +109,4 @@
   + nest new nest-file-upload
 + 의존성 패키지
   + npm i -D @types/multer
-  + 
+  + npm i @nestjs/serve-static
