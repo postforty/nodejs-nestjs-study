@@ -22,7 +22,7 @@ export class AppController {
   @UseInterceptors(FileInterceptor('file', multerOption))
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   fileUpLoad(@UploadedFile() file: Express.Multer.File) {
-    // console.log(file.buffer.toString('utf-8'));
-    return 'File Upload';
+    console.log(file);
+    return `${file.originalname} File Uploaded check http://localhost:3000/upload/${file.filename}`;
   }
 }
