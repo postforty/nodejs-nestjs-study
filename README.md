@@ -110,3 +110,6 @@
 + 의존성 패키지
   + npm i -D @types/multer
   + npm i @nestjs/serve-static
+### 웹소켓
++ ws 패키지
+  + npm i ws
