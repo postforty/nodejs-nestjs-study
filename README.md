@@ -113,3 +113,9 @@
 ### 웹소켓
 + ws 패키지
   + npm i ws
+### socket.io
++ 프로젝트 생성
+  + nest new nest-chat
++ 패키지 설치
+  + npm i @nestjs/websockets @nestjs/platform-socket.io --legacy-peer-deps
+  + npm i -D @types/socket.io
