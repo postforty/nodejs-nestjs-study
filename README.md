@@ -118,4 +118,4 @@
   + nest new nest-chat
 + 패키지 설치
   + npm i @nestjs/websockets @nestjs/platform-socket.io --legacy-peer-deps
-  + npm i -D @types/socket.io
+  + npm i -D @types/socket.io --legacy-peer-deps
