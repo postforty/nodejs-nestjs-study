@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   MessageBody,
   SubscribeMessage,
@@ -42,5 +43,14 @@ export class RoomGateway {
       message: `${nickname}님이 ${room}방에 입장했습니다.`,
     });
     socket.join(room);
+  }
+
+  @SubscribeMessage('message')
+  handleMessageToRoom(socket: Socket, data) {
+    const { nickname, room, message } = data;
+    console.log(data);
+    socket.broadcast.to(room).emit('message', {
+      message: `${nickname}: ${message}`,
+    });
   }
 }
