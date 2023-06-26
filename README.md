@@ -119,3 +119,10 @@
 + 패키지 설치
   + npm i @nestjs/websockets @nestjs/platform-socket.io --legacy-peer-deps
   + npm i -D @types/socket.io --legacy-peer-deps
+### TypeScript
++ 설치
+  + npm i -g typescript@4.9.5
+  + npm i -g ts-node
++ 실행
+  + ts-node hello-typescript.ts
+
